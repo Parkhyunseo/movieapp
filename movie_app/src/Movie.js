@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import './Movie.css';
+// PropTypes가 Deprecated 되서  prop-types library를 npm으로 설치하여 import
+import PropTypes from 'prop-types';
 
 class Movie extends Component{
+    
+    static propTypes = {
+        title:PropTypes.string.isRequired,
+        poster: PropTypes.string.isRequired,
+    }
+    
     render(){
         return(
             //console.log(this.props);
@@ -14,6 +22,11 @@ class Movie extends Component{
 }
 
 class MoviePoster extends Component{
+    
+    static propTypes ={
+        poster : PropTypes.string.isRequired,    
+    }
+    
     render(){
         return(
 // eslint-disable-next-line
