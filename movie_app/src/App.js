@@ -35,6 +35,8 @@ class App extends Component {
   
   // 컴포넌트가 존재하기 시작할 때 작동
   
+  // state는 리액트 컴포넌트 안에 있는 오브젝트
+  // state가 바뀔 때마다 다시 render
   componentWillMount(){
     //API 요청
     console.log('will mount')
@@ -42,7 +44,16 @@ class App extends Component {
   
   componentDidMount(){
     //데이터작업
-    console.log('did mount')
+    //state를 업데이트하려면 ths.setState를 사용해야 한다.
+    setTimeout(() => {
+      this.setState({
+        greeting: 'Hello again!'
+      })
+    }, 2000)
+  }
+  
+  state = {
+    greeting : 'Hello!'
   }
   
   render() {
@@ -54,6 +65,7 @@ class App extends Component {
       // array에 있는 각 차일드는 반드시 고유한 key prop을 가져야한다.
       // 앨리먼트가 많을경우 key를 줘야한다. key는 unique해야한다.
       <div className="App">
+        {this.state.greeting}
         {movies.map((movie, index) => {
           return <Movie title={movie.title} poster={movie.poster} key={index} />
         })}
