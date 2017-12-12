@@ -25,7 +25,28 @@ const movies =[
 
 // 모든 컴포넌트는 render function을 갖고 있다.
 class App extends Component {
+  // Render:
+  // will mount -> did render -> did mount
+  
+  // Update:
+  // componentWillReceiveProps() -> shouldComponentUpdate() == true ->
+  // componentWillUpdate(){spinner 같은 것} -> render()
+  //-> componentDidUpdate() {spinner를 숨길 수 있다}
+  
+  // 컴포넌트가 존재하기 시작할 때 작동
+  
+  componentWillMount(){
+    //API 요청
+    console.log('will mount')
+  }
+  
+  componentDidMount(){
+    //데이터작업
+    console.log('did mount')
+  }
+  
   render() {
+    console.log('did mount')    
     return (
       // This is called JSX
       // class -> className
