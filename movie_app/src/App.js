@@ -26,7 +26,13 @@ class App extends Component {
   
   componentDidMount(){
     //console.log(fetch('https://google.com'))0
+    //프록시를 거쳐서 Redirect 시켜서 url에 문제가 있다? 찾아보기 
+    //'https://yts.am/api/v2/list_movies.json?sort_by=rating'
+    // 원래는 위의 url이였음
     fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+    .then(potato => potato.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err)) 
   }
   
   state = {
