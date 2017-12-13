@@ -86,7 +86,8 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy: {
-      "*":"http://0.0.0.0:8080"
+      "*":"http://0.0.0.0:8080",
+      //"/api/v2": "https://yts.ag"
     },
     before(app) {
       // This lets us open files from the runtime error overlay.

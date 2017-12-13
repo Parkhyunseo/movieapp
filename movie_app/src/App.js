@@ -25,8 +25,8 @@ class App extends Component {
   }
   
   componentDidMount(){
-    console.log(fetch('https://google.com'))
-    //fetch('https://yts.ag/api/v2/list_movies.json?sort_by=rating')
+    //console.log(fetch('https://google.com'))0
+    fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
   }
   
   state = {
